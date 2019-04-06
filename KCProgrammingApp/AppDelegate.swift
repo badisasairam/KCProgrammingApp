@@ -11,12 +11,20 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+
+    
+    let APP_ID = "2F946372-6785-B68F-FF95-33F3EA37E700"
+    let API_KEY = "1372346C-6AC7-5189-FF14-AA28449CB000"
+    
+    var backendless = Backendless.sharedInstance()
+    
     var window: UIWindow?
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    
+    private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey:Any]?) -> Bool {
+        backendless!.initApp(APP_ID, apiKey:API_KEY)
+        
         return true
+    }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -42,5 +50,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
-}
+
 
